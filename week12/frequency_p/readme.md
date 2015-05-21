@@ -1,14 +1,14 @@
-##Frequecy of word
+#Frequecy of word
 
 Calculate frequency of word from input file then result wordcounting.txt
 
-##USAGE
-#Compile
+#USAGE
+##Compile
 Run
 ```
 make
 ```
-#Run
+##Run
 ```
 ./frequency <input-file>
 ```
