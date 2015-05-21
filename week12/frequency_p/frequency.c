@@ -97,9 +97,9 @@ int main(int argc, char *argv[])
      exportfrq(*wordt,f);
      printf("\n");
      fclose(f);
+
+     
      //free
-     
-     
      freetree(wordt);
      free(wordarr);
      free(wordt);
@@ -151,7 +151,7 @@ void fixword(char *string){
      i = j = 0;
      
      char word[strlen(string)+1];
-         
+     
      while (string[i] != '\0') {
           if(isalpha(string[i]) || string[i] == '-'  || 
              string[i] == '_'){
@@ -165,4 +165,6 @@ void fixword(char *string){
      }
      word[j] = '\0';
      strcpy(string,word);
+     
 }
+

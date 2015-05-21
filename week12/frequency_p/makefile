@@ -27,7 +27,6 @@ $(EXECUTABLE): $(OBJS)
 clean:
 	rm -rf *.o $(EXECUTABLE) gmon.out
 
-
 remake: clean all
 redebug: clean debug
 reprofiling: clean profiling
