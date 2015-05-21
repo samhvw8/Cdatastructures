@@ -25,7 +25,7 @@ $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf *.o $(EXECUTABLE) gmon.out
+	rm -rf *.o $(EXECUTABLE) gmon.out wordcounting.txt
 
 remake: clean all
 redebug: clean debug
