@@ -1,0 +1,38 @@
+/*
+  Author : Ginz
+  Link with single linklist
+  Update date : 06/05/2015
+  Change Change type to void *
+*/
+
+
+#ifndef _LINK_STACK_H_GIN_
+#define _LINK_STACK_H_GIN_
+
+
+typedef struct node node;
+typedef struct nodestack {
+  void * v;
+  node* next;
+}node;
+#define TOP(stack) stack->v
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef node* stack;
+
+//make node
+node *makeNode(void * val);
+// del first node p
+void dfnode(node **r);
+// insert node begin of list
+void inodeB(node *p,node **r);
+// free list
+void freelist(node **r); // free list node
+void Sinstall(stack *stack); // install stack
+void Sremove(stack *stack); // remove stack
+int empty(stack stack); // check stack
+void push(void * el,stack *stack); // push to stack
+void *pop(stack *stack); // pop from stack
+
+#endif

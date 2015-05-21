@@ -1,0 +1,87 @@
+Lecturer-Giang vien
+First-Thu nhat(So thu tu)
+Day-Ngay
+Caculator-May tinh
+Boy-Con trai
+Aunt-Co/Bac gai
+Answer-Tra loi
+Book-Sach
+Bye-Tam Biet
+Brother-Anh/em trai
+Content-Noi Dung
+Chapter-Chuong
+Chair-Cai ghe
+Counter-Bo dem
+Equivalent-Tuong Duong
+Dream-Mo
+Die-Chet
+Definition-Dinh nghia
+Do-Lam
+End-Ket thuc
+Father-Bo
+Factor-Nhan to
+Event-Su kien
+Find-Tim
+Group-Nhom
+Genteel-Le do,Lich Su
+Function-Ham
+Found-Tim thay
+Forever-Mai mai
+Friend-Ban
+Game-Tro choi
+Geode-Pha le trong tuong nha
+Geocentric-Coi trai dat la trung tam
+Geo-Cach hinh thanh trai dat
+Geodesic-Do dac,duong ngat nhat cua cung
+God-Than
+Hour-Gio
+Home-Nha
+Hello-Xin Chao
+Happen-Xay Ra
+Hi-Chao
+Hotel-Nha nghi
+Immortal-Bat Tu
+House-Ngoi nha
+Lamp-Den
+School-Truong Hoc
+One-So mot
+Mission-Nhiem vu(Quan doi)
+Mastering-Thanh thao
+Live-Song
+Life-Cuoc doi
+Master-Su phu
+Message-Tin nhan
+Menu-Danh muc
+Never-Khong bao gio
+Mother-me
+Monday-Thu hai(Ngay trong tuan)
+New-Moi
+Professor-Giao Su
+Postive-Tich cuc,Dien cuc duong
+Pointer-Con tro
+Parent-Bo me
+Poke-Choc
+Problem-Van De
+Question-Cau hoi
+Quest-Nhiem vu
+Salary-Luong
+Tomorrow-Ngay mai
+Sunday-Chu nhat
+Speaker-Loa
+Second-Giay,Thu hai(So thu tu)
+Search-Tim kiem
+Sister-Chi/em
+Start-Bat dau
+Thurday-Thu nam(Ngay trong tuan)
+Three-So ba
+Teacher-Thay giao
+Today-Hom nay
+Weekend-Cuoi tuan
+University-Dai Hoc
+Uncle-Chu/Bac trai
+Two-So hai
+Understand-Hieu
+Variable-Bien so
+You-Ban
+Who-Ai
+Zoo-Vuon Thu
