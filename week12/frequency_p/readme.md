@@ -1,16 +1,18 @@
-![GCC](Red Hat 4.9.2-6)
+
 
 #Frequecy of word
-
 Calculate frequency of word from input file then result wordcounting.txt
 
-#USAGE
-##Compile
+## Dependencies software
+GNU Compiler Collection
+
+##USAGE
+###Compile
 Run
 ```
 make
 ```
-##Run
+###Run
 ```
 ./frequency <input-file>
 ```
