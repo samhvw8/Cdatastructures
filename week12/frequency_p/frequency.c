@@ -26,6 +26,7 @@ void printfreq(tree T){
      printfreq(T->left);
      printfreq(T->right);
 }
+
 void fixword(char *string);
 void exportfrq(tree T,FILE *f){
      static int cw = 0;
@@ -61,7 +62,7 @@ int main(int argc, char *argv[])
           fprintf(stderr,"\t\tCan't Read file %s\n",argv[1]);
           exit(1);
      }
-  // #define eclare
+     // declare
      wordp * wordarr;
      
      wordarr = getword(f);
@@ -103,6 +104,7 @@ int main(int argc, char *argv[])
      freetree(wordt);
      free(wordarr);
      free(wordt);
+     
      
      
      return 0;
