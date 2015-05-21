@@ -1,1 +1,1 @@
-# hustCbasic
+# Code on Cbasic course
