@@ -1,0 +1,96 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Addleft	Btree.c	/^tree Addleft(tree *Tree,void * e){$/;"	f
+Addright	Btree.c	/^tree Addright(tree *Tree,void * e){$/;"	f
+Balance	BST.h	33;"	d
+CC	makefile	/^CC=gcc$/;"	m
+CFLAGS	makefile	/^CFLAGS= -c -Wall -Werror -Wextra$/;"	m
+COLL	Ginz.h	18;"	d
+COLR	Ginz.h	19;"	d
+CreateNode	Btree.c	/^nodet * CreateNode(void * v){$/;"	f
+EXECUTABLE	makefile	/^EXECUTABLE=dict$/;"	m
+INVALID	Ginz.h	11;"	d
+JOINTL	Ginz.h	15;"	d
+JOINTR	Ginz.h	16;"	d
+LDFLAGS	makefile	/^LDFLAGS=$/;"	m
+LeftChild	Btree.c	/^tree LeftChild(tree n){$/;"	f
+MAX	dict.c	/^int MAX;$/;"	v
+MAXOPTION	Ginz.h	12;"	d
+MakeNullTree	Btree.c	/^void MakeNullTree(tree *t){$/;"	f
+OBJS	makefile	/^OBJS=$(SRCS:.c=.o)$/;"	m
+PERROR	BST.h	19;"	d
+ROW	Ginz.h	17;"	d
+RightChild	Btree.c	/^tree RightChild(tree n){$/;"	f
+SRCS	makefile	/^SRCS=dict.c Btree.c BST.c Ginz.c$/;"	m
+SWAP	BST.h	16;"	d
+SWAP	Btree.h	12;"	d
+TAB	Ginz.h	14;"	d
+TABS	Ginz.h	13;"	d
+VALTYPE	Ginz.h	10;"	d
+_BST_GIN_H_	BST.h	12;"	d
+_Btree_H_GIN_	Btree.h	7;"	d
+_Ginz_H_	Ginz.h	5;"	d
+addfarr	BST.c	/^void addfarr(tree *r,size_t size,void * *arr,int L,int R,int (*cmp)(const void*,const void*)){$/;"	f
+cNNULL	BST.h	14;"	d
+cNULL	BST.h	13;"	d
+checkBSTcondition	BST.c	/^void checkBSTcondition(tree *r,int (*cmp)(const void *,const void *)){$/;"	f
+checkan	Ginz.c	/^int checkan(char arr[],int length){$/;"	f
+cmp	dict.c	/^int cmp(const void *a,const void *b){$/;"	f
+count	Btree.h	/^  int count;$/;"	m	struct:nodet
+count2da	Ginz.c	/^int count2da(char arr[][MAXOPTION],unsigned int num){$/;"	f
+countLine	dict.c	/^int countLine(FILE *f){$/;"	f
+createNode	Btree.c	/^void createNode(){$/;"	f
+createfrom2	Btree.c	/^tree createfrom2(void * e,tree l,tree r){$/;"	f
+deletemin	BST.c	/^void deletemin(tree *root,void *key,int (*cmp)(const void *,const void *)){$/;"	f
+depth	Btree.c	/^int depth(tree T,tree cTree,int d){$/;"	f
+element	Btree.h	/^  void * element;$/;"	m	struct:nodet
+export	dict.c	/^void export(tree r,FILE *f){$/;"	f
+findmax	BST.c	/^tree *findmax(tree *root){$/;"	f
+findmin	BST.c	/^tree *findmin(tree *root){$/;"	f
+fixbalance	BST.c	/^void fixbalance(tree *r,int h){$/;"	f
+freetree	Btree.c	/^void freetree(tree *t){$/;"	f
+freetreee	Btree.c	/^void freetreee(tree *t){$/;"	f
+getDict	dict.c	/^keyp *getDict(FILE *f){$/;"	f
+getmenu	Ginz.c	/^int getmenu(const char *a,int o,int EXIT){$/;"	f
+height	Btree.c	/^int height(tree T){$/;"	f
+highertkey	BST.c	/^int highertkey(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){$/;"	f
+in_order	Btree.c	/^void in_order(tree t,void (*order)(tree)){$/;"	f
+indent	Ginz.c	/^void indent(int INDT){$/;"	f
+insert	BST.c	/^void insert(tree *root,void *key,int (*cmp)(const void *,const void *)){$/;"	f
+intersort	Ginz.c	/^void intersort(VALTYPE arr[],VALTYPE n){$/;"	f
+isEmpty	Btree.c	/^int isEmpty(tree t){$/;"	f
+isLeaf	Btree.c	/^int isLeaf(tree n){$/;"	f
+key	dict.c	/^} key;$/;"	t	typeref:struct:key$	file:
+key$	dict.c	/^typedef struct key\$$/;"	s	file:
+keyp	dict.c	/^typedef key *keyp;$/;"	t	file:
+left	Btree.h	/^  nodet *left,$/;"	m	struct:nodet
+lowertkey	BST.c	/^int lowertkey(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){$/;"	f
+main	dict.c	/^int main(int argc, char *argv[])$/;"	f
+mfflush	Ginz.c	/^void mfflush() {$/;"	f
+nb_inodes	Btree.c	/^int nb_inodes(tree t){$/;"	f
+nb_leaf	Btree.c	/^int nb_leaf(tree t){$/;"	f
+nb_nodes	Btree.c	/^int nb_nodes(tree t){$/;"	f
+nb_right	Btree.c	/^int nb_right(tree t){$/;"	f
+nmstr	Ginz.c	/^int nmstr(char *b,char *a){$/;"	f
+nodet	Btree.h	/^typedef struct nodet  nodet;$/;"	t	typeref:struct:nodet
+nodet	Btree.h	/^typedef struct nodet {$/;"	s
+nodet	Btree.h	/^} nodet;$/;"	t	typeref:struct:nodet
+postHK	BST.c	/^int postHK(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){$/;"	f
+postLK	BST.c	/^int postLK(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){$/;"	f
+post_order	Btree.c	/^void post_order(tree t,void (*order)(tree)){$/;"	f
+pre_order	Btree.c	/^void pre_order(tree t,void (*order)(tree)){$/;"	f
+printpretty	dict.c	/^void printpretty(tree r,tree T,int m){$/;"	f
+ranfloat	Ginz.c	/^float ranfloat(int limdown,int limup){$/;"	f
+repchar	Ginz.c	/^void repchar(int times,char c){$/;"	f
+reversetree	Btree.c	/^void reversetree(tree *t){$/;"	f
+right	Btree.h	/^    *right;$/;"	m	struct:nodet
+search	BST.c	/^tree *search(tree *root,void * fkey,int (*cmp)(const void *,const void *)){$/;"	f
+standname	Ginz.c	/^void standname(char *str){$/;"	f
+swap	Ginz.c	/^void swap(VALTYPE *a , VALTYPE *b){$/;"	f
+translate	dict.c	/^  char translate[30];$/;"	m	struct:key$	file:
+tree	Btree.h	/^typedef nodet *tree;$/;"	t
+word	dict.c	/^  char word[30];$/;"	m	struct:key$	file:

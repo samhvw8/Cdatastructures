@@ -54,19 +54,19 @@ void Sremove(stackp stack){
   if(stack != NULL) freelist(stack);
 }
 int empty(stack stack){
-  return stack == NULL;
+     return stack == NULL;
 }
 void push(void * el,stackp stack){
-  nodes *p = makeNode(el);
-  inodeB(p,stack); 
+     nodes *p = makeNode(el);
+     inodeB(p,stack);
 }
 void * pop(stackp stack){
-  if(!empty(*stack)) {
-    void * a = (*stack)->v;
-    dfnode(stack);
-    return a;
-  } else {
-    printf("\tStack Underflow !!\n");
-    return NULL;
-  }
+     if(!empty(*stack)) {
+          void * a = (*stack)->v;
+          dfnode(stack);
+          return a;
+     } else {
+          printf("\tStack Underflow !!\n");
+          return NULL;
+     }
 }

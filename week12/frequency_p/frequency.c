@@ -166,7 +166,5 @@ void fixword(char *string){
        i++;
      }
      word[j] = '\0';
-     strcpy(string,word);
-     
+     strcpy(string,word);     
 }
-

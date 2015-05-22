@@ -24,7 +24,7 @@ tree RightChild(tree n){
 }
 
 
-nodet * CreateNode(void * v){
+nodet * CreateNode(void * v) {
   nodet *new = (nodet *)malloc(sizeof(nodet));
   if(new == NULL) return NULL;
   new->element = v;
@@ -196,4 +196,3 @@ void reversetree(tree *t){
   reversetree(&((*t)->right));
   SWAP((*t)->left,(*t)->right);
 }
-

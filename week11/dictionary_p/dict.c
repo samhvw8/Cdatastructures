@@ -5,7 +5,7 @@
 
 typedef struct key$
 {
-  char word[30];
+  char word[50];
   char translate[30];
 } key;
 

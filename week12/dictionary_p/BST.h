@@ -13,7 +13,7 @@
 #define cNULL(X) (X) == NULL 
 #define cNNULL(X) (X) != NULL
 #ifndef SWAP
-#define SWAP(x , y) do { typeof(x) SWAP = (x); (x) = (y) ; (y) =SWAP;} while (0);
+#define SWAP(x , y) do { typeof(x) TEMP = (x); (x) = (y) ; (y) =TEMP;} while (0);
 #endif
 #ifndef PERROR
 #define PERROR fprintf(stderr,"\t\tERROR in %s:%d\n",__FILE__,__LINE__)
