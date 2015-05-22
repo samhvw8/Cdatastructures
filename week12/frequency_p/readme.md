@@ -19,3 +19,8 @@ make
 `<input-file>` a file which contain news to program
 
 
+File test
+```
+test1.txt
+test2.txt
+```
