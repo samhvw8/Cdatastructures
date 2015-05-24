@@ -18,6 +18,10 @@ typedef struct nodet {
     *right;
 } nodet;
 
+#ifndef SWAP
+#define SWAP(x , y) do { typeof(x) TEMP = (x); (x) = (y) ; (y) =TEMP;} while (0);
+#endif
+
 typedef nodet *tree;
 
 tree LeftChild(tree n);

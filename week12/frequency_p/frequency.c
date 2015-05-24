@@ -8,10 +8,10 @@ typedef struct addr$
 } word;
 
 typedef word *wordp;
-
+#define COLP 3 // column print
 
 void export(tree r,FILE *f);
-#define COLP 3
+
 
 void printfreq(tree T){
      static int cw = 0;

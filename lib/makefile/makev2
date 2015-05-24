@@ -1,8 +1,0 @@
-OBJECT = undo.o Ginz.o linkstack.o
-undo: $(OBJECT) 
-	cc $(OBJECT) -o undo
-	
-undo.o: Ginz.h linkstack.h
-Ginz.o: Ginz.h
-linkstack.o: linkstack.h
-

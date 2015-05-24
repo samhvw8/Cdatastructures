@@ -1,6 +1,7 @@
 CC=gcc
-CFLAGS= -c -Wall -Werror -Wextra 
-LDFLAGS=
+FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
+CFLAGS= -c $(FLAGS)
+LDFLAGS= $(FLAGS)
 SRCS=int.c Btree.c BST.c
 OBJS=$(SRCS:.c=.o)
 EXECUTABLE=int
@@ -8,13 +9,9 @@ EXECUTABLE=int
 
 all: $(SRCS) $(EXECUTABLE)
 
-
-
 debug: CFLAGS += -g
 debug: LDFLAGS += -g
 debug:  $(SRCS) $(EXECUTABLE)
-
-
 
 profiling: CFLAGS += -pg
 profiling: LDFLAGS += -pg
@@ -28,7 +25,6 @@ $(EXECUTABLE): $(OBJS)
 
 clean:
 	rm -rf *.o $(EXECUTABLE)
-
 
 remake: clean all
 redebug: clean debug

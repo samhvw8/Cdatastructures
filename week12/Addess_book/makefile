@@ -1,6 +1,7 @@
 CC=gcc
-CFLAGS= -c -Wall -Werror -Wextra 
-LDFLAGS=
+FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
+CFLAGS= -c $(FLAGS)
+LDFLAGS= $(FLAGS)
 SRCS=address.c Btree.c BST.c Ginz.c
 OBJS=$(SRCS:.c=.o)
 EXECUTABLE=address

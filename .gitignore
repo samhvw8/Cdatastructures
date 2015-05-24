@@ -1,1 +1,25 @@
 Testlab/
+# Object files
+*.o
+*.obj
+*.elf
+#Precompiled Header
+*.gch
+*.pch
+
+#Shared object (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+#Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+#Debug files
+*.dSYM/

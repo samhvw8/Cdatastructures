@@ -1,6 +1,7 @@
 CC=gcc
-CFLAGS= -c -Wall -Werror -Wextra 
-LDFLAGS=
+FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
+CFLAGS= -c $(FLAGS)
+LDFLAGS= $(FLAGS)
 SRCS=arith.c Btree.c BST.c linkstack.c Ginz.c
 OBJS=$(SRCS:.c=.o)
 EXECUTABLE=arith

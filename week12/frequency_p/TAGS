@@ -1,0 +1,79 @@
+
+Btree.c,980
+void MakeNullTree(tree *t){MakeNullTree8,73
+int isEmpty(tree t){isEmpty12,119
+tree LeftChild(tree n){LeftChild17,164
+tree RightChild(tree n){RightChild21,243
+nodet * CreateNode(void * v) {CreateNode27,326
+int isLeaf(tree n){isLeaf36,530
+int nb_nodes(tree t){nb_nodes41,638
+tree createfrom2(void * e,tree l,tree r){createfrom246,743
+tree Addleft(tree *Tree,void * e){Addleft57,953
+tree Addright(tree *Tree,void * e){Addright73,1209
+int nb_leaf(tree t){nb_leaf88,1465
+int height(tree T){height100,1702
+int depth(tree T,tree cTree,int d){depth107,1859
+int nb_inodes(tree t){nb_inodes117,2063
+int nb_right(tree t){nb_right130,2324
+void pre_order(tree t,void (*order)(tree)){pre_order141,2492
+void in_order(tree t,void (*order)(tree)){in_order148,2632
+void post_order(tree t,void (*order)(tree)){post_order155,2769
+void freetree(tree *t){freetree163,2913
+void freetreee(tree *t){freetreee176,3113
+void reversetree(tree *t){reversetree189,3319
+
+BST.c,1067
+tree *findmin(tree *root){findmin10,109
+tree *findmax(tree *root){findmax16,275
+void insert(tree *root,void *key,int (*cmp)(const void *,const void *)){insert22,442
+tree *search(tree *root,void * fkey,int (*cmp)(const void *,const void *)){search42,933
+void deletemin(tree *root,void *key,int (*cmp)(const void *,const void *)){deletemin51,1275
+void addfarr(tree *r,size_t size,void * *arr,int L,int R,int (*cmp)(const void*,const void*)){addfarr130,4335
+void fixbalance(tree *r,int h){fixbalance143,4698
+void checkBSTcondition(tree *r,int (*cmp)(const void *,const void *)){checkBSTcondition195,6891
+int lowertkey(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){lowertkey212,7440
+int postLK(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){postLK223,7740
+int highertkey(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){highertkey238,8226
+int postHK(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){postHK248,8509
+
+BST.h,185
+#define _BST_GIN_H__BST_GIN_H_12,125
+#define cNULL(cNULL13,145
+#define cNNULL(cNNULL14,175
+#define SWAP(SWAP16,218
+#define PERROR PERROR19,322
+#define Balance(Balance33,899
+
+Btree.h,311
+#define _Btree_H_GIN__Btree_H_GIN_7,79
+#define SWAP(SWAP12,154
+typedef struct nodet  nodet;nodet15,244
+typedef struct nodet {nodet16,273
+  void * element;element17,296
+  nodet *left,left18,314
+    *right;right19,329
+  int count;count20,341
+} nodet;nodet21,354
+typedef nodet *tree;tree23,364
+
+frequency.c,437
+typedef struct addr$addr$5,57
+     char word[100];word7,80
+} word;word8,101
+typedef word *wordp;wordp10,110
+#define COLP COLP14,162
+void printfreq(tree T){printfreq16,194
+void exportfrq(tree T,FILE *f){exportfrq31,629
+int MAX;MAX47,1056
+int main(int argc, char *argv[])main51,1180
+wordp *getword(FILE *f){getword113,2473
+int cmp(const void *a,const void *b){cmp145,3065
+void fixword(char *string){fixword150,3204
+
+makefile,187
+CC=gccCC1,0
+CFLAGS= -c -Wall -Werror -WextraCFLAGS2,7
+LDFLAGS=LDFLAGS3,40
+SRCS=frequency.c Btree.c BST.cSRCS4,49
+OBJS=$(SRCS:.c=.o)OBJS5,80
+EXECUTABLE=frequencyEXECUTABLE6,99

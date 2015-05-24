@@ -1,0 +1,74 @@
+
+Btree.c,1016
+void MakeNullTree(tree *t){MakeNullTree8,73
+void createNode(){createNode11,118
+int isEmpty(tree t){isEmpty14,140
+tree LeftChild(tree n){LeftChild19,185
+tree RightChild(tree n){RightChild23,264
+nodet * CreateNode(void * v){CreateNode29,347
+int isLeaf(tree n){isLeaf38,550
+int nb_nodes(tree t){nb_nodes43,658
+tree createfrom2(void * e,tree l,tree r){createfrom248,763
+tree Addleft(tree *Tree,void * e){Addleft59,973
+tree Addright(tree *Tree,void * e){Addright75,1229
+int nb_leaf(tree t){nb_leaf90,1485
+int height(tree T){height102,1722
+int depth(tree T,tree cTree,int d){depth109,1879
+int nb_inodes(tree t){nb_inodes119,2083
+int nb_right(tree t){nb_right132,2344
+void pre_order(tree t,void (*order)(tree)){pre_order143,2512
+void in_order(tree t,void (*order)(tree)){in_order150,2652
+void post_order(tree t,void (*order)(tree)){post_order157,2789
+void freetree(tree *t){freetree165,2933
+void freetreee(tree *t){freetreee178,3133
+void reversetree(tree *t){reversetree191,3339
+
+BST.c,1067
+tree *findmin(tree *root){findmin10,109
+tree *findmax(tree *root){findmax16,275
+void insert(tree *root,void *key,int (*cmp)(const void *,const void *)){insert22,442
+tree *search(tree *root,void * fkey,int (*cmp)(const void *,const void *)){search42,933
+void deletemin(tree *root,void *key,int (*cmp)(const void *,const void *)){deletemin51,1275
+void addfarr(tree *r,size_t size,void * *arr,int L,int R,int (*cmp)(const void*,const void*)){addfarr130,4335
+void fixbalance(tree *r,int h){fixbalance143,4698
+void checkBSTcondition(tree *r,int (*cmp)(const void *,const void *)){checkBSTcondition195,6891
+int lowertkey(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){lowertkey212,7440
+int postLK(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){postLK223,7740
+int highertkey(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){highertkey238,8226
+int postHK(tree root,void *key,int (*cmp)(const void *,const void *),void (*visit)(tree t)){postHK248,8509
+
+BST.h,185
+#define _BST_GIN_H__BST_GIN_H_12,125
+#define cNULL(cNULL13,145
+#define cNNULL(cNNULL14,175
+#define SWAP(SWAP16,218
+#define PERROR PERROR19,322
+#define Balance(Balance33,899
+
+int.c,220
+#define MAX MAX4,36
+#define MAKEP(MAKEP6,52
+void printpretty(tree r,tree T,int m){printpretty10,149
+void printe(tree r){printe22,423
+int intcom(const void *a,const void *b){intcom27,508
+int main(){main31,588
+
+Btree.h,311
+#define _Btree_H_GIN__Btree_H_GIN_7,79
+#define SWAP(SWAP12,154
+typedef struct nodet  nodet;nodet15,244
+typedef struct nodet {nodet16,273
+  void * element;element17,296
+  nodet *left,left18,314
+    *right;right19,329
+  int count;count20,341
+} nodet;nodet21,354
+typedef nodet *tree;tree23,364
+
+makefile,176
+CC=gccCC1,0
+CFLAGS= -c -Wall -Werror -Wextra CFLAGS2,7
+LDFLAGS=LDFLAGS3,41
+SRCS=int.c Btree.c BST.cSRCS4,50
+OBJS=$(SRCS:.c=.o)OBJS5,75
+EXECUTABLE=intEXECUTABLE6,94
