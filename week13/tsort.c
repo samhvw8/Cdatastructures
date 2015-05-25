@@ -17,7 +17,7 @@ void readff(FILE *f,student ***sarr,int *num);
 int cmpDic(const void *a,const void *b);
 void printarr(student **sarr,int num);
 
-
+void freearr(student ***sarr,int num);
 
 void mfflush() {
   int ch;
@@ -36,15 +36,49 @@ int main(int argc, char *argv[]){
       exit(1);
     }
     readff(fi,&s,&num);
+
     printarr(s,num);
-// insersort((void *)s,num,cmpDic);
-   quicksort((void *)s,0,num-1,cmpDic);
-//    heapsort((void *)s,num,cmpDic);
-    printf("\n\n\n");
+    printf("\nStart sort\n");
+    // Insertion sort
+    printf("\t\tInsertion Sort\n\n");
+    insersort((void *)s,num,cmpDic);
     printarr(s,num);
+    freearr(&s,num);
+
+    printf("\n");
+    // Quick sort
+    printf("\t\tQuick Sort\n\n");
+    readff(fi,&s,&num);
+    quicksort((void *)s,0,num-1,cmpDic);
+    printarr(s,num);
+    freearr(&s,num);
+    printf("\n");
+    // Heap Sort
+    printf("\t\tHeap Sort\n\n");
+    readff(fi,&s,&num);
+    heapsort((void *)s,num,cmpDic);
+    printarr(s,num);
+    freearr(&s,num);
+    printf("\n");
+    // Merge sort
+    printf("\t\tMerge Sort\n\n");
+    readff(fi,&s,&num);
+    mergesort((void *)s,0,num-1,cmpDic);
+    printarr(s,num);
+    freearr(&s,num);
+    printf("\n");
+    // Shell sort
+    printf("\t\tShell Sort\n\n");
+    readff(fi,&s,&num);
+    shellsort((void *)s,num,cmpDic);
+    printarr(s,num);
+    freearr(&s,num);
+    printf("\n");
+
+
 
     fclose(fi);
-    free(s);
+
 
   }
   return 0;
@@ -85,7 +119,7 @@ void readff(FILE *f,student ***sarr,int *num){
     (*sarr)[i]->no = i;
     fscanf(f,"%d|%[^|]|%s[^\\]",&((*sarr)[i]->mssv),(*sarr)[i]->name,(*sarr)[i]->tel);
   }
-
+  rewind(f);
   /* for (i = 0; i < (*num); i++) { */
   /*   printf("%-3d - %d - %-30s - %-15s\n",(*sarr)[i].no,(*sarr)[i].mssv,(*sarr)[i].name,(*sarr)[i].tel); */
   /* } */
@@ -106,4 +140,13 @@ int cmpDic(const void *a,const void *b){
   student *za = *(student **)a;
   student *zb = *(student **)b;
   return strcmp(za->name,zb->name);
+}
+void freearr(student ***sarr,int num){
+     long long  i ;
+
+     for (i = 0; i < (num); i++)
+          free((*sarr)[i]);
+
+     free(*sarr);
+     *sarr = NULL;
 }

@@ -24,13 +24,21 @@ void insersort(void **base,size_t size,int (*compar)(const void *,const void *))
 void quicksort(void **base,size_t l,size_t r,int (*compar)(const void *,const void *));
 size_t partion(void **base,size_t l,size_t r,size_t pivotI,int (*compar)(const void *,const void *));
 size_t getpivot(void **base,size_t l,size_t r,int (*compar)(const void *,const void *));
-// heap soft
+// heap sort
 
 void heapsort(void **base,size_t size,int (*compar)(const void *,const void *));
 void buildHeap(void **base,size_t size,int (*compar)(const void *,const void *));
 void heapify(void **base,size_t size,size_t loc,int (*compar)(const void *,const void *));
 
 
+// MERGE SORT
+
+void merge(void **base,size_t l,size_t m,size_t r,int (*compar)(const void *,const void *));
+void mergesort(void **base,size_t l,size_t r,int (*compar)(const void *,const void *));
+
+// SHELL SORT
+
+void shellsort(void* *base,size_t size,int (*compar)(const void *,const void *));
 
 
 #endif

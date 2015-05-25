@@ -71,7 +71,7 @@ void shellsort(VARTYPE *arr,int num){
   while(gap < num) gap = gap*2+1;
 
   while (gap > 0) {
-    for(i = gap;i<num;i++){
+    for(i = gap;i<size;i++){
       temp = arr[i];
       for(j = i;j>=gap && arr[j - gap]>temp;j-=gap){
         arr[j] = arr[j-gap];
