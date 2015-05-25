@@ -2,9 +2,9 @@ CC=gcc
 FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
 CFLAGS= -c $(FLAGS)
 LDFLAGS= $(FLAGS)
-SRCS=tsort.c sort.c
+SRCS=testsort.c sort.c
 OBJS=$(SRCS:.c=.o)
-EXECUTABLE=tsort
+EXECUTABLE=testsort
 
 
 all: $(SRCS) $(EXECUTABLE)
