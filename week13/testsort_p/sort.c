@@ -183,3 +183,28 @@ void shellsort(void* *base,size_t size,int (*compar)(const void *,const void *))
           gap= gap/2;
      }
 }
+
+//INTROSORT
+
+
+void introsort(void * *base,size_t size,int (*compar)(const void *,const void *)){
+     isort(base,floor(log(size))*2,size,compar);
+}
+
+void isort(void * *base,size_t maxdepth,size_t size,int (*compar)(const void *,const void *)){
+     size_t p;
+     void ** bas; // use bas for saparate array
+     if(size<= 1) return;
+     else if (maxdepth == 0) heapsort(base,size,compar);
+     else{
+          size_t pi = getpivot(base,0,size-1,compar);
+
+          bas = base;
+          p = partion(base,0,size-1,pi,compar);
+          //if(p == 0) return ;
+          bas = bas + p + 1;
+
+          isort(base,maxdepth-1,p+1,compar);
+          isort(bas,maxdepth-1,size-p-1,compar);
+     }
+}

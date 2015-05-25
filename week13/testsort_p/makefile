@@ -1,5 +1,5 @@
 CC=gcc
-FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
+FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull -lm
 CFLAGS= -c $(FLAGS)
 LDFLAGS= $(FLAGS)
 SRCS=testsort.c sort.c

@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+//#include <time.h>
 #include "sort.h"
-
+//#define timerun(time,mgr) printf("\n\t\t Time run of %s :  %lf\n",(mgr),(double)(time)/CLOCKS_PER_SEC)
 
 typedef struct student_t{
      int no,
@@ -20,68 +21,88 @@ void printarr(student **sarr,int num);
 void freearr(student ***sarr,int num);
 
 void mfflush() {
-  int ch;
-  while((ch = getchar()) && ch != '\n' && ch != EOF);
+     int ch;
+     while((ch = getchar()) && ch != '\n' && ch != EOF);
 }
 
 int main(int argc, char *argv[]){
-  student **s;
-  int num;
-  if(argc != 2) printf("Wrong Input !! \n"
-                       " USAGE :./tsort <INPUT FILE 1>  \n");
-  else {
-    FILE *fi;
-    if((fi = fopen(argv[1],"r+")) == NULL) {
-      fprintf(stderr,"Can't read %s file !!\n",argv[1]);
-      exit(1);
-    }
-    readff(fi,&s,&num);
+     student **s;
+     int num;
+     if(argc != 2) {
+          fprintf(stderr,"\t\t\tERROR :Wrong Input !! \n"
+                          "\t\tUSAGE :./testsort <INPUT FILE 1>  \n");
+          exit(1);
+     }
 
-    printarr(s,num);
-    printf("\nStart sort\n");
-    // Insertion sort
-    printf("\t\tInsertion Sort\n\n");
-    insersort((void *)s,num,cmpDic);
-    printarr(s,num);
-    freearr(&s,num);
+     FILE *fi;
 
-    printf("\n");
-    // Quick sort
-    printf("\t\tQuick Sort\n\n");
-    readff(fi,&s,&num);
-    quicksort((void *)s,0,num-1,cmpDic);
-    printarr(s,num);
-    freearr(&s,num);
-    printf("\n");
-    // Heap Sort
-    printf("\t\tHeap Sort\n\n");
-    readff(fi,&s,&num);
-    heapsort((void *)s,num,cmpDic);
-    printarr(s,num);
-    freearr(&s,num);
-    printf("\n");
-    // Merge sort
-    printf("\t\tMerge Sort\n\n");
-    readff(fi,&s,&num);
-    mergesort((void *)s,0,num-1,cmpDic);
-    printarr(s,num);
-    freearr(&s,num);
-    printf("\n");
-    // Shell sort
-    printf("\t\tShell Sort\n\n");
-    readff(fi,&s,&num);
-    shellsort((void *)s,num,cmpDic);
-    printarr(s,num);
-    freearr(&s,num);
-    printf("\n");
+     if((fi = fopen(argv[1],"r+")) == NULL) {
+          fprintf(stderr,"Can't read %s file !!\n",argv[1]);
+          exit(1);
+     }
+
+     readff(fi,&s,&num);
+     printarr(s,num);
+     printf("\n\t\t\tStart sort\n");
+
+     // Insertion sort
+     printf("\t\tInsertion Sort\n\n");
+     insersort((void *)s,num,cmpDic);
+     printarr(s,num);
+
+     freearr(&s,num);
+     printf("\n");
+
+     // Quick sort
+     printf("\t\tQuick Sort\n\n");
+     readff(fi,&s,&num);
+     quicksort((void *)s,0,num-1,cmpDic);
+     printarr(s,num);
+
+     freearr(&s,num);
+     printf("\n");
+
+     // Heap Sort
+     printf("\t\tHeap Sort\n\n");
+     readff(fi,&s,&num);
+     heapsort((void *)s,num,cmpDic);
+     printarr(s,num);
+
+     freearr(&s,num);
+     printf("\n");
+
+     // Merge sort
+     printf("\t\tMerge Sort\n\n");
+     readff(fi,&s,&num);
+     mergesort((void *)s,0,num-1,cmpDic);
+     printarr(s,num);
+
+     freearr(&s,num);
+     printf("\n");
+
+     // Shell sort
+     printf("\t\tShell Sort\n\n");
+     readff(fi,&s,&num);
+     shellsort((void *)s,num,cmpDic);
+     printarr(s,num);
+     freearr(&s,num);
+     printf("\n");
+
+     // Intro sort
+     printf("\t\tIntro Sort\n\n");
+     readff(fi,&s,&num);
+     introsort((void *)s,num,cmpDic);
+     printarr(s,num);
+     freearr(&s,num);
+     printf("\n");
 
 
 
-    fclose(fi);
+     fclose(fi);
 
 
-  }
-  return 0;
+
+     return 0;
 }
 
 

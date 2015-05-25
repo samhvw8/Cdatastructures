@@ -10,6 +10,7 @@ Quick sort
 Heap sort
 Merge Sort
 Shell Sort
+Intro sort
 ```
 ## Dependencies software
 GNU Compiler Collection

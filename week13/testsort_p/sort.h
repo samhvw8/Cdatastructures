@@ -13,7 +13,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <math.h> // for introsort
 
 // insertion sort
 
@@ -40,5 +40,9 @@ void mergesort(void **base,size_t l,size_t r,int (*compar)(const void *,const vo
 
 void shellsort(void* *base,size_t size,int (*compar)(const void *,const void *));
 
+// INTRO SORT
+
+void introsort(void * *base,size_t size,int (*compar)(const void *,const void *));
+void isort(void * *base,size_t maxdepth,size_t size,int (*compar)(const void *,const void *));
 
 #endif
