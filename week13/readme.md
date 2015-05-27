@@ -18,3 +18,8 @@ Shell Sort
 ###sort_p
 Test sorting algorithm in c use VARTYPE with int
 
+###sortnokia_p
+Using HeapSort array of struct (struct phone) get from binary file
+
+###mergesort_p
+Using Mergesort sort array of struct (struct contact) get from two binary file then write to one binary file

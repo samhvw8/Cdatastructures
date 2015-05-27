@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define Finput "phonecontact.dat"
 typedef struct ${
-  char name[30];
-  char tel[15];
-  char email[20];
+  char name[50];
+  char tel[20];
+  char email[60];
 } Pcontact;
 
 
@@ -14,18 +14,53 @@ void mfflush() {
 }
 int num;
 void readarr(FILE *fp);
-void writearr(FILE *fp);
+void writearr(FILE *fp,FILE *f);
 void editarr(FILE *fp);
 
 int main(){
   FILE *fp;
+  FILE *fout = fopen("contact.txt","r");
+  writearr(fp,fout);
 
-  writearr(fp);
-  readarr(fp);
-  editarr(fp);
-readarr(fp);
     return 0;
 }
+void writearr(FILE *fp,FILE *f){
+     int i,irc;
+     Pcontact *pcarr;
+     if((fp = fopen(Finput,"w+b")) == NULL){
+          printf("Can't create file !!\n");
+
+     } else {
+          num = 0;
+          char s[10000];
+
+          // get line
+          while ((fgets(s,10000,f)) != NULL) {
+               num++;
+          }
+          rewind(f);
+
+          pcarr = (Pcontact *)malloc(sizeof(Pcontact)*num);
+          for(i = 0;i < num;i++){
+               fscanf(f,"%[^|]|",pcarr[i].name);
+               fscanf(f,"%[0123456789]",pcarr[i].tel);
+               fscanf(f,"|%[^\n]\n",pcarr[i].email);
+          }
+
+          for(i = 0;i < num;i++){
+               printf("\t\t%s - %s - %s\n",pcarr[i].name,pcarr[i].tel,pcarr[i].email);
+          }
+
+          irc =fwrite(pcarr,sizeof(Pcontact),num,fp);
+          printf("frrite return code = %d\n",irc);
+          fclose(fp);
+          free(pcarr);
+     }
+}
+
+
+
+
 
 void editarr(FILE *fp){
   int i,irc,no,c;
@@ -94,28 +129,3 @@ void readarr(FILE *fp){
   }
 }
 
-void writearr(FILE *fp){
-  int i,irc;
-  Pcontact *pcarr;
-  if((fp = fopen(Finput,"w+b")) == NULL){
-    printf("Can't create file !!\n");
-
-  } else {
-    printf("How many Phone contact you want to create : ");scanf("%d",&num);mfflush();
-    pcarr = (Pcontact *)malloc(sizeof(Pcontact)*num);
-    for(i = 0;i < num;i++){
-      printf("Name :");
-      scanf("%[^\n]",pcarr[i].name);mfflush();
-      printf("%s's Tel :",pcarr[i].name);
-      scanf("%[0123456789]",pcarr[i].tel);mfflush();
-      printf("%s's email :",pcarr[i].name);
-      scanf("%s",pcarr[i].email);mfflush();
-
-    }
-
-    irc =fwrite(pcarr,sizeof(Pcontact),num,fp);
-    printf("frrite return code = %d\n",irc);
-    fclose(fp);
-    free(pcarr);
-  }
-}

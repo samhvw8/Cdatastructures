@@ -1,11 +1,11 @@
 CC=gcc
-FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
+FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull -lm
 CFLAGS= -c $(FLAGS)
 LDFLAGS= $(FLAGS)
-SRCS=nokia.c Btree.c BST.c Ginz.c
+SRCS=mergesort.c sort.c
 OBJS=$(SRCS:.c=.o)
-EXECUTABLE=nokia
-another= gmon.out
+EXECUTABLE=mergesort
+fileclean= gmon.out p.dat
 
 all: $(SRCS) $(EXECUTABLE)
 
@@ -26,7 +26,7 @@ $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf *.o $(EXECUTABLE) $(another)
+	rm -rf *.o $(EXECUTABLE) $(fileclean)
 
 remake: clean all
 redebug: clean debug

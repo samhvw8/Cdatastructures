@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define Finput "phonecontact.dat"
 typedef struct ${
-  char name[30];
-  char tel[15];
-  char email[30];
+     char name[50];
+     char tel[20];
+     char email[60];
 } Pcontact;
 
 

@@ -2,12 +2,14 @@ CC=gcc
 FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull -lm
 CFLAGS= -c $(FLAGS)
 LDFLAGS= $(FLAGS)
-SRCS=testsort.c sort.c
+SRCS=testsort.c sort.c 
 OBJS=$(SRCS:.c=.o)
 EXECUTABLE=testsort
-
+another= gmon.out
 
 all: $(SRCS) $(EXECUTABLE)
+
+
 
 debug: CFLAGS += -g
 debug: LDFLAGS += -g
@@ -24,8 +26,9 @@ $(EXECUTABLE): $(OBJS)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -rf *.o $(EXECUTABLE)
+	rm -rf *.o $(EXECUTABLE) $(another)
 
 remake: clean all
 redebug: clean debug
 reprofiling: clean profiling
+

@@ -1,10 +1,10 @@
 CC=gcc
-FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull
+FLAGS = -Wall -Werror -Wextra -Warray-bounds -Wnonnull -lm
 CFLAGS= -c $(FLAGS)
 LDFLAGS= $(FLAGS)
-SRCS=nokia.c Btree.c BST.c Ginz.c
+SRCS=sortnokia.c sort.c
 OBJS=$(SRCS:.c=.o)
-EXECUTABLE=nokia
+EXECUTABLE=sortnokia
 another= gmon.out
 
 all: $(SRCS) $(EXECUTABLE)

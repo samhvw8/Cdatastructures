@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 typedef struct ${
-  char name[30];
+  char name[40];
   char tel[15];
   char email[30];
 } Pcontact;
@@ -23,8 +23,8 @@ int main(int argc,char *argv[]){
   num = atoi(argv[2]);
   Finput = argv[1];
 
-  //writearr(fp);
-  readarr(fp);
+  writearr(fp);
+  //readarr(fp);
   return 0;
 }
 
