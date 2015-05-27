@@ -15,7 +15,7 @@ Heap sort
 Merge Sort
 Shell Sort
 
-###sort_p
+###old_sort_p
 Test sorting algorithm in c use VARTYPE with int
 
 ###sortnokia_p
