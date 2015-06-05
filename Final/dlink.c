@@ -6,6 +6,7 @@ void freelist(node *r){
   node *to_free = r;
   while(to_free != NULL){
     r =  r ->next;
+    free(to_free->v);
     free(to_free);
     to_free = r;
   }
@@ -13,10 +14,10 @@ void freelist(node *r){
 
 
 void linit(llist *l){
-     if(l == NULL) return ;
-     l->r = NULL;
-     l->l = NULL;
-     l->c = NULL;
+  if(l == NULL) return ;
+  l->r = NULL;
+  l->l = NULL;
+  l->c = NULL;
 }
 
 
@@ -97,17 +98,21 @@ void delNode(llist *l,node *p){
   if(p == l->r){
     l->r = p->next;
     if(p != l->l)  p->next->prev = NULL;
+    free(p->v);
     free(p);
+    
     l->c = l->r;
   } else if(p == l->l){
     l->l = p->prev;
     if(p != l->r)    p->prev->next = NULL;
+    free(p->v);
     free(p);
     l->c = l->l;
   } else {
     l->c = p->prev;
     p->prev->next = p->next;
     p->next->prev = p->prev;
+    free(p->v);
     free(p);
   }
 }

@@ -1,0 +1,144 @@
+#include "Ginz.h"
+#include "dlink.h"
+
+
+#define FILENAME "poly.txt"
+
+
+typedef struct {
+  int coef;
+  int exp;
+} element;
+
+
+void readff(FILE *f,llist *P,llist *Q);
+void printexp(llist p);
+
+
+
+
+int main(){
+  FILE *f;
+  llist *P,*Q;
+  P = (llist *)malloc(sizeof(llist));
+  if(P == NULL) {
+    fprintf(stderr,"ERROR : Allocated memory failed !!\n");
+    exit(1);
+  }
+  Q = (llist *)malloc(sizeof(llist));
+  if(Q == NULL) {
+    fprintf(stderr,"ERROR : Allocated memory failed !!\n");
+    exit(1);
+  }
+
+  f = fopen(FILENAME,"r");
+  if(f == NULL ) {
+    fprintf(stderr,"ERROR : can't read file %s",FILENAME);
+    exit(1);
+  }
+
+  readff(f,P,Q);
+  
+  printexp(*P);
+  printexp(*Q);
+
+  /*
+  for(;;){
+
+
+  
+  
+  }
+  */
+  
+
+
+
+
+
+  return 0;
+
+}
+
+void readff(FILE *f,llist *P,llist *Q){
+  
+  while(1){
+    int c;
+    fscanf(f,"%d",&c);
+    if(c != -1){
+      element *num;
+      num = (element *)malloc(sizeof(element));
+      if(num == NULL) {
+	fprintf(stderr,"ERROR : Allocated memory failed !!\n");
+	exit(1);
+      }
+      num->coef = c;
+      fscanf(f,"%d",&(num->exp));     
+      insertE(P,num);
+    } else {
+      char check;
+      fscanf(f,"%c",&check);
+      if(check == '\n') goto nextloop;
+      else {
+      element *num;
+      num = (element *)malloc(sizeof(element));
+      if(num == NULL) {
+	fprintf(stderr,"ERROR : Allocated memory failed !!\n");
+	exit(1);
+      }
+      num->coef = c;
+      fscanf(f,"%d",&(num->exp));     
+      insertE(P,num);
+      }
+    }
+  }
+ nextloop:
+
+ while(1){
+    int c;
+    fscanf(f,"%d",&c);
+    if(c != -1){
+      element *num;
+      num = (element *)malloc(sizeof(element));
+      if(num == NULL) {
+	fprintf(stderr,"ERROR : Allocated memory failed !!\n");
+	exit(1);
+      }
+      num->coef = c;
+      fscanf(f,"%d",&(num->exp));     
+      insertE(Q,num);
+    } else {
+      char check;
+      fscanf(f,"%c",&check);
+      if(feof(f)) goto end;
+      else {
+	element *num;
+	num = (element *)malloc(sizeof(element));
+	if(num == NULL) {
+	  fprintf(stderr,"ERROR : Allocated memory failed !!\n");
+	  exit(1);
+	}
+	num->coef = c;
+	fscanf(f,"%d",&(num->exp));     
+	insertE(Q,num);
+      }
+    }
+  }
+
+ end:
+
+ return ;
+}
+
+
+void printexp(llist p){
+  node *z = p.r;
+  while(z != NULL){
+    element *a = (element*)z->v; 
+    if(a->exp != 0)    printf("%dx^%d ",a->coef,a->exp); 
+    else printf("%d",a->coef); 
+    z = z->next;
+  }
+  printf("\n");
+
+}

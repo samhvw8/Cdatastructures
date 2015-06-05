@@ -55,7 +55,7 @@ int main(){
      printf("Number :%d\n",num);
      printarr(s,num);
      printf("\n\t\t\tStart sort\n");
-/*
+     /*
      // Insertion sort
      printf("\t\tInsertion Sort\n\n");
      insersort((void *)s,num,cmpcontact);
@@ -81,16 +81,16 @@ int main(){
 
      freearr(&s,num);
      printf("\n");
-*/
+     */
      // Merge sort
      printf("\t\tMerge Sort\n\n");
-//     readff(fi,&s,&num);
+     //readff(fi,&s,&num);
      mergesort((void *)s,0,num-1,cmpcontact);
      printarr(s,num);
      export(s,num,fo);
      freearr(&s,num);
      printf("\n");
-/*
+     /*
      // Shell sort
      printf("\t\tShell Sort\n\n");
      readff(fi,&s,&num);
@@ -106,12 +106,10 @@ int main(){
      printarr(s,num);
      freearr(&s,num);
      printf("\n");
-*/
+     */
 
 
      fclose(fi);
-
-
 
      return 0;
 }

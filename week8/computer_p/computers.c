@@ -11,7 +11,11 @@
 #include "Ginz.h"
 
 
-
+typedef struct $program{
+     char name[30];
+     unsigned int ID;
+     unsigned long memory;
+} program;
 
 unsigned long max_mem_c = 0; // max memory computer
 unsigned int max_pro_c = 0;// max process computer
@@ -73,81 +77,92 @@ int main(int argc, char *argv[]){
 
 
 void addProgram(Queue *wait){
-  program add;
+     program *add;
+     add = (program *)malloc(sizeof(program));
+     if(add == NULL) {
+          PERROR;
+          exit(1);
+     }
+     printf("\tProgram's name : ");scanf("%[^\n]",add->name);mfflush();
+     printf("\tProgram %s's ID :",add->name);scanf("%u",&(add->ID));mfflush();
+     printf("\tMemory program %s need :",add->name);scanf("%lu",&(add->memory));mfflush();
 
-  printf("\tProgram's name : ");scanf("%[^\n]",add.name);mfflush();
-  printf("\tProgram %s's ID :",add.name);scanf("%u",&add.ID);mfflush();
-  printf("\tMemory program %s need :",add.name);scanf("%lu",&add.memory);mfflush();
+     if(add->memory > max_mem_c ) {
 
+          printf("\t\tProgram you want to add has bigger memory than computer memory !!\n"
+                 "\t==> Program can not add to waiting procress !!\n"
+                 "\t\tAdd new Program or correct your program's detail !!\n");
+          return;
+     }
+     else Enqueue(add,wait);
 
-
-  if(add.memory > max_mem_c ) {
-
-    printf("\t\tProgram you want to add has bigger memory than computer memory !!\n"
-           "\t==> Program can not add to waiting procress !!\n"
-           "\t\tAdd new Program or correct your program's detail !!\n");
-    return;
-  }
-   Enqueue(add,wait);
 }
+
+
 void killProgram(Queue *run){
-  int found = 0;
-  node *p = NULL ;
-  if(getmenu("Kill by Name;KILL by ID",2,0)){
-    char name[30];
-    printf("\t\tWhat is program name you want to kill : >");scanf("%[^\n]",name);mfflush();
+     if(empty(*run)) return;
+     int found = 0;
+     node *p = NULL ;
+     if(getmenu("Kill by Name;KILL by ID",2,0) == 1){
+          char name[30];
+          printf("\t\tWhat is program name you want to kill : >");scanf("%[^\n]",name);mfflush();
 
-   p = run->l.r;
+          p = run->l.r;
 
-    while (p != NULL) {
-      if(strcmp(name,p->v.name) == 0){
-        found = 1 ;
-        break;
-      }
-      p = p->next;
-    }
-  } else {
-    unsigned int id;
-    printf("\t\tWhat is program id you want to kill : >");scanf("%u",&id);mfflush();
+          while (p != NULL) {
+               if(strcmp(name,((program *)p->v)->name) == 0){
+                    found = 1 ;
+                    break;
+               }
+               p = p->next;
+          }
+     } else {
+          unsigned int id;
+          printf("\t\tWhat is program id you want to kill : >");scanf("%u",&id);mfflush();
 
-    p = run->l.r;
+          p = run->l.r;
 
-    while (p != NULL) {
-      if(id == p->v.ID){
-        found = 1 ;
-        break;
-      }
-      p = p->next;
-    }
-  }
-  if(!found) printf("\t\tProgram isn't on running list !!");
-  else {
-    delNode(&(run->l),p);
-    free_pro_c++;
-    free_mem_c += p->v.memory;
-    printf("\t\tKill program Success !!");
-  }
+          while (p != NULL) {
+               if(id == ((program *)p->v)->ID){
+                    found = 1 ;
+                    break;
+               }
+               p = p->next;
+          }
+     }
+     if(!found) printf("\t\tProgram isn't on running list !!");
+     else {
+          free_mem_c += ((program *)p->v)->memory;
+          free_pro_c++;
+          run->num--;
+          delNode(&(run->l),p);
+          printf("\t\tKill program Success !!");
+     }
 }
 
 void update(Queue *run){
-  node *p = run->l.r;
-  free_mem_c = max_mem_c;
-  while (p!=NULL) {
-    free_mem_c -= p->v.memory;
-    p = p ->next;
-  }
-  free_pro_c = max_pro_c - run->num;
+     node *p = run->l.r;
+     free_mem_c = max_mem_c;
+     while (p!=NULL) {
+          free_mem_c -= ((program *)p->v)->memory;
+          p = p ->next;
+     }
+     free_pro_c = max_pro_c - run->num;
 }
 
 void refresh(Queue *run,Queue *wait){
-  if(!empty(*run)) update(run);
+     if(empty(*wait)) return ;
+     if(!empty(*run)) update(run);
 
-  if(free_pro_c > 0){
-    if(free_mem_c >= wait->l.r->v.memory) {
-      Enqueue(Dequeue(wait),run);
-      if(!empty(*wait)) refresh(run,wait);
-    }
-  }
+     if(free_pro_c > 0){
+          if(free_mem_c >= ((program *)(wait->l.r->v))->memory) {
+               Enqueue(Dequeue(wait),run);
+               if(!empty(*wait)) {
+                    refresh(run,wait);
+               }
+               update(run);
+          }
+     }
 }
 
 
@@ -158,12 +173,13 @@ void showListprocess(Queue *run,Queue *wait){
 
 
   if(!empty(*run)){
+
     printf("\t\t Runining Process : \n");
     node *p = run->l.r;
     int i = 0;
     printf("\t\t%-3s %-30s %-15s %s\n","No","Name","ID","Memory");
     while (p != NULL) {
-      printf("\t\t%-3d %-30s %-15u %lu\n",i + 1,p->v.name,p->v.ID,p->v.memory);
+         printf("\t\t%-3d %-30s %-15u %lu\n",i + 1,((program *)p->v)->name,((program *)p->v)->ID,((program *)p->v)->memory);
       p = p ->next;
       i++;
     }
@@ -174,7 +190,7 @@ void showListprocess(Queue *run,Queue *wait){
     int i = 0;
     printf("\t\t%-3s %-30s %-15s %s\n","No","Name","ID","Memory");
     while (p != NULL) {
-      printf("\t\t%-3d %-30s %-15u %lu\n",i + 1,p->v.name,p->v.ID,p->v.memory);
+         printf("\t\t%-3d %-30s %-15u %lu\n",i + 1,((program *)p->v)->name,((program *)p->v)->ID,((program *)p->v)->memory);
       p = p ->next;
       i++;
     }

@@ -17,9 +17,6 @@
 #define ROW '='
 #define COLL "||"
 #define COLR "||"
-#ifndef PERROR
-#define PERROR fprintf(stderr,"\t\tERROR in %s:%d\n",__FILE__,__LINE__)
-#endif
 /**
  *
   /========== Menu ==========\

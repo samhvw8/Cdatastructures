@@ -1,46 +1,46 @@
-/*
-  Double link lib
-  Author Ginz
-  Update : 06/05/2015
-  Change type to void *
- */
-
 
 #ifndef _DLINK_H_GIN_
 #define _DLINK_H_GIN_
+
+
+typedef struct $program{
+  char name[30];
+  unsigned int ID;
+  unsigned long memory;
+} program;
+typedef program ETYPE;
+
 
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct node node;
 struct node {
-  void * v;
+  ETYPE v;
   node *next;
   node *prev;
 };
 
 typedef struct $llist {
-  node *r; // root of list
-  node *l; // last of list
-  node *c; // currunt on list
+  node *r;
+  node *l;
+  node *c;
 } llist;
 
 // free list
 void freelist(node *r);
-// Del node at root
 void delNodeR(llist *l);
 
-// List install
 void linit(llist *l);
 
 // make node
-node *makeNode(void * val);
+node *makeNode(ETYPE val);
 
 // insert end of list
-void insertE(llist *l,void * val);
+void insertE(llist *l,ETYPE val);
 // insert node before
-void insertNb(llist *l,node *p,void * val);
+void insertNb(llist *l,node *p,ETYPE val);
 //insert node after
-void insertNa(llist *l,node *p,void * val);
+void insertNa(llist *l,node *p,ETYPE val);
 
 
 // del node
@@ -54,10 +54,10 @@ int countList(node *r);
 
 
 // insert begin of list
-void insertB(llist *l,void * val);
+void insertB(llist *l,ETYPE val);
 // insert at position
 
-node *insertAtPosition(llist *l,void * v,int n);
+node *insertAtPosition(llist *l,ETYPE v,int n);
 // delete at position
 
 node *deleteAtPosition(llist *l,int n);

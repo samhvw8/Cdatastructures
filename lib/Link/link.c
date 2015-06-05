@@ -16,24 +16,17 @@ void freelist(node *r){
    node *to_free = r;
    while(to_free != NULL){
      r = r ->next;
-     free(to_free);
+     free(to_free->v); // free value
+     free(to_free); // free node
      to_free = r;
    }
  }
 
-
 void linit(llist *l){
-
   l->r = NULL;
-
-
   l->l = NULL;
-
-
   l->c = NULL;
 }
-
-
 //make node
 node *makeNode(void * val){
   node *p;
@@ -108,8 +101,6 @@ void delNode(llist *l,node *p){
   }
   free(p);
 }
-
-
 // insert node before node p
 void insertNb(llist *l,node *p,void * val){
   node *q = makeNode(val);

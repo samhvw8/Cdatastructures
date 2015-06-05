@@ -17,6 +17,9 @@
 #define ROW '='
 #define COLL "||"
 #define COLR "||"
+#ifndef PERROR
+#define PERROR fprintf(stderr,"\t\tERROR in %s:%d\n",__FILE__,__LINE__)
+#endif
 /**
  *
   /========== Menu ==========\
@@ -31,7 +34,7 @@
 //print character  c with (times) 
 void repchar(int times,char c);
 // max lengthgth in 2 demention string for menu **
-int count2da(char arr[][MAXOPTION],int num);
+int count2da(char arr[][MAXOPTION],unsigned int num);
 // check string is all number or not
 int checkan(char arr[],int length);
 // Menu 

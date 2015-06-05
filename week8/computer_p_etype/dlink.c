@@ -13,15 +13,15 @@ void freelist(node *r){
 
 
 void linit(llist *l){
-     if(l == NULL) return ;
-     l->r = NULL;
-     l->l = NULL;
-     l->c = NULL;
+
+  l->r = NULL;
+  l->l = NULL;
+  l->c = NULL;
 }
 
 
 // make node
-node *makeNode(void * val){
+node *makeNode(ETYPE val){
   node *new = (node *)malloc(sizeof(node));
   new->v = val;
   new->next = NULL;
@@ -30,7 +30,7 @@ node *makeNode(void * val){
 }
 
 // insert end of list
-void insertE(llist *l,void * val){
+void insertE(llist *l,ETYPE val){
   node *p = makeNode(val);
 
   if(l->r == NULL){
@@ -45,7 +45,7 @@ void insertE(llist *l,void * val){
   }
 }
 // insert node before
-void insertNb(llist *l,node *p,void * val){
+void insertNb(llist *l,node *p,ETYPE val){
   node *q = makeNode(val);
 
   if(l->r == NULL) {
@@ -66,7 +66,7 @@ void insertNb(llist *l,node *p,void * val){
   }
 }
 //insert node after
-void insertNa(llist *l,node *p,void * val){
+void insertNa(llist *l,node *p,ETYPE val){
   node *q = makeNode(val);
   if(l->r ==NULL){
     insertE(l,val);
@@ -139,7 +139,7 @@ int countList(node *r){
 
 
 // insert begin of list
-void insertB(llist *l,void * val){
+void insertB(llist *l,ETYPE val){
   node *p;
   p = makeNode(val);
 
@@ -157,7 +157,7 @@ void insertB(llist *l,void * val){
 }
 // insert at position
 
-node *insertAtPosition(llist *l,void * v,int n){
+node *insertAtPosition(llist *l,ETYPE v,int n){
   if(l->r == NULL ) {
     fprintf(stderr,"\n\t\t List hasn't create !!\n");
     return NULL;
@@ -298,4 +298,3 @@ void mergelist(llist *l,llist *l2){
 
 
 }
-
