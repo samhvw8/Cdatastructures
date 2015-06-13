@@ -11,6 +11,6 @@ GNU Compiler Collection
 
 ##USAGE
 ###Compile
-Open terminal and `./make`
+Open terminal and `make`
 ###Run
 Open terminal and ` ./address `
